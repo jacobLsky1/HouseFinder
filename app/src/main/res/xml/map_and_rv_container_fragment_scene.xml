@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnSwipe motion:touchAnchorId="@+id/containerForRVFragment" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/containerForMapFragment"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toTopOf="@+id/containerForRVFragment" />
+        <Constraint
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/containerForRVFragment"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            motion:layout_constraintTop_toBottomOf="@+id/containerForMapFragment" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="409dp"
+            android:layout_height="430dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/containerForMapFragment"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/containerForRVFragment"
+            motion:layout_editor_absoluteY="377dp" />
+        <Constraint
+            android:id="@+id/containerForMapFragment"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="409dp"
+            android:layout_height="300dp"
+            motion:layout_constraintBottom_toTopOf="@+id/containerForRVFragment"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+</MotionScene>
